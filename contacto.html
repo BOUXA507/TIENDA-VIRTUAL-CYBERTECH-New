@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybertech - Formulario de Compra y Contacto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- BARRA SUPERIOR INFORMATIVA -->
+<div class="top-bar">
+    <div class="top-bar-info">
+        <span>🇵🇦 Envíos a todo Panamá</span>
+        <span>🔒 Proceso de Compra Seguro Simulado</span>
+    </div>
+    <div>
+        <span class="top-bar-badge">Checkout Académico</span>
+    </div>
+</div>
+
+<!-- ENCABEZADO -->
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="imagenes/logo-blanco.svg" alt="Cybertech Logo" class="logo-img">
+        </a>
+    </div>
+    <button class="menu-hamburguesa" id="btnMenu" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
+        ☰
+    </button>
+    <nav id="menuNav">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="carrito.html" class="nav-carrito">
+            Carrito 🛒 <span id="contadorCarrito">0</span>
+        </a>
+        <a href="contacto.html" class="activo">Contacto</a>
+    </nav>
+</header>
+
+<!-- CONTENEDOR PRINCIPAL -->
+<main class="contenedor">
+    <div class="breadcrumb">
+        <a href="index.html">Inicio</a> / <a href="carrito.html">Mi Carrito</a> / <span>Finalizar Compra</span>
+    </div>
+
+    <div class="seccion-header" style="text-align: left;">
+        <h1>Formulario de Compra y Contacto</h1>
+        <p>Completa tus datos personales, de entrega y selecciona tu método de pago simulado para procesar tu orden.</p>
+    </div>
+
+    <div class="checkout-grid">
+        <!-- FORMULARIO DE COMPRA -->
+        <div>
+            <form id="formularioCompra">
+                
+                <!-- 1. DATOS PERSONALES -->
+                <div class="fieldset-grupo">
+                    <div class="fieldset-titulo">
+                        <span>👤</span> Datos del Cliente
+                    </div>
+                    <div class="form-row">
+                        <div>
+                            <label for="nombre">Nombre completo *</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                required
+                                placeholder="Ej. Roberto Vasquez"
+                            >
+                        </div>
+                        <div>
+                            <label for="cedula">Cédula / Documento de identidad *</label>
+                            <input
+                                type="text"
+                                id="cedula"
+                                required
+                                placeholder="Ej. 8-123-456"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="correo">Correo electrónico *</label>
+                            <input
+                                type="email"
+                                id="correo"
+                                required
+                                placeholder="ejemplo@correo.com"
+                            >
+                        </div>
+                        <div>
+                            <label for="telefono">Teléfono / Celular (WhatsApp) *</label>
+                            <input
+                                type="tel"
+                                id="telefono"
+                                required
+                                placeholder="Ej. 6000-0000"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. DATOS DE ENTREGA -->
+                <div class="fieldset-grupo">
+                    <div class="fieldset-titulo">
+                        <span>📍</span> Dirección y Entrega
+                    </div>
+                    <label for="direccion">Dirección exacta de entrega (Provincia / Distrito / Calle) *</label>
+                    <textarea
+                        id="direccion"
+                        rows="3"
+                        required
+                        placeholder="Ej. Ciudad de Panamá, Vía España, Edificio Torres del Sol, Apto 4B"
+                    ></textarea>
+
+                    <label for="entrega">Método de entrega *</label>
+                    <select id="entrega" required>
+                        <option value="Envío a domicilio (Gratis)">Envío a domicilio en Panamá (Gratis - Promoción Semestral)</option>
+                        <option value="Retiro en sucursal principal">Retiro en sucursal Cybertech (Vía España)</option>
+                    </select>
+                </div>
+
+                <!-- 3. MÉTODO DE PAGO SIMULADO -->
+                <div class="fieldset-grupo">
+                    <div class="fieldset-titulo">
+                        <span>💳</span> Método de Pago Simulado
+                    </div>
+                    <label for="metodo">Seleccione forma de pago *</label>
+                    <select id="metodo" required>
+                        <option value="">-- Seleccione una opción --</option>
+                        <option value="Yappy Panamá">Yappy Panamá (Banca Móvil)</option>
+                        <option value="Transferencia Bancaria">Transferencia Bancaria (Banco General, Banistmo)</option>
+                        <option value="Tarjeta de Crédito / Débito">Tarjeta de Crédito / Débito (Visa o Mastercard)</option>
+                        <option value="Pago contra entrega">Pago contra entrega en efectivo</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="boton boton-success" style="width: 100%; font-size: 17px; padding: 15px;">
+                    ✅ Confirmar y Procesar Compra
+                </button>
+            </form>
+
+            <!-- MENSAJE DINÁMICO DE CONFIRMACIÓN -->
+            <div id="mensajeCompra"></div>
+        </div>
+
+        <!-- RESUMEN LATERAL DEL PEDIDO -->
+        <aside class="checkout-sidebar">
+            <h3>Resumen del Pedido</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Artículos en tu carrito:</p>
+            
+            <div class="checkout-items-preview" id="checkoutItemsPreview">
+                <!-- Generado dinámicamente con JS -->
+            </div>
+
+            <div class="resumen-linea">
+                <span>Subtotal:</span>
+                <strong id="checkoutSubtotal">$0.00</strong>
+            </div>
+            <div class="resumen-linea">
+                <span>Costo de envío:</span>
+                <span style="color: var(--success); font-weight: 700;">Gratis</span>
+            </div>
+            <div class="resumen-linea total">
+                <span>Total a pagar:</span>
+                <span id="checkoutTotal">$0.00</span>
+            </div>
+
+            <div style="margin-top: 25px; padding: 15px; background-color: #eff6ff; border-radius: var(--radius-sm); border-left: 4px solid var(--accent); font-size: 13px; color: #1e3a8a;">
+                <strong>💡 Nota del Proyecto:</strong>
+                <p style="margin-top: 4px;">Este es un entorno de simulación académica desarrollado para el curso de Programación para Web de la Universidad de Panamá.</p>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<!-- PIE DE PÁGINA INSTITUCIONAL -->
+<footer>
+    <div class="footer-contenedor">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Cybertech</h3>
+                <p>Tienda virtual especializada en soluciones informáticas, cómputo, telefonía móvil y accesorios gamer en Panamá.</p>
+                <div class="footer-metodos-pago">
+                    <span class="pago-pill">Yappy</span>
+                    <span class="pago-pill">Visa</span>
+                    <span class="pago-pill">Mastercard</span>
+                    <span class="pago-pill">Banco General</span>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="productos.html?cat=computadoras">Computadoras</a></li>
+                    <li><a href="productos.html?cat=celulares">Celulares</a></li>
+                    <li><a href="productos.html?cat=audio">Audio</a></li>
+                    <li><a href="productos.html?cat=accesorios">Accesorios</a></li>
+                    <li><a href="productos.html?cat=gaming">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Catálogo Completo</a></li>
+                    <li><a href="carrito.html">Mi Carrito de Compras</a></li>
+                    <li><a href="contacto.html">Formulario y Checkout</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Proyecto Académico</h3>
+                <div class="badge-estudiante">
+                    <p><strong>Estudiante:</strong> Roberto Vasquez</p>
+                    <p><strong>Universidad:</strong> Universidad de Panamá</p>
+                    <p><strong>Facultad:</strong> Facultad de Informática</p>
+                    <p><strong>Curso:</strong> Programación para Web</p>
+                    <p><strong>Docente:</strong> Magíster Alma V. Bosquez</p>
+                    <p><strong>Período:</strong> Semestral II Semestre 2026</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-creditos">
+            <p>&copy; 2026 <strong>Cybertech</strong> | Desarrollado por <strong>Roberto Vasquez</strong> - <strong>Universidad de Panamá</strong>. Proyecto Académico de Programación Web.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/funciones.js"></script>
+</body>
+</html>

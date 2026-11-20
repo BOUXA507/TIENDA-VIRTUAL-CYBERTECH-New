@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybertech - Catálogo de Productos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- BARRA SUPERIOR INFORMATIVA -->
+<div class="top-bar">
+    <div class="top-bar-info">
+        <span>🇵🇦 Envíos a todo Panamá</span>
+        <span>💳 Aceptamos Yappy, Tarjetas y Transferencias</span>
+    </div>
+    <div>
+        <span class="top-bar-badge">Catálogo Oficial 2026</span>
+    </div>
+</div>
+
+<!-- ENCABEZADO -->
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="imagenes/logo-blanco.svg" alt="Cybertech Logo" class="logo-img">
+        </a>
+    </div>
+    <button class="menu-hamburguesa" id="btnMenu" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
+        ☰
+    </button>
+    <nav id="menuNav">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="activo">Productos</a>
+        <a href="carrito.html" class="nav-carrito">
+            Carrito 🛒 <span id="contadorCarrito">0</span>
+        </a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+</header>
+
+<!-- CONTENEDOR PRINCIPAL -->
+<main class="contenedor">
+    <div class="breadcrumb">
+        <a href="index.html">Inicio</a> / <span>Catálogo de Productos</span>
+    </div>
+
+    <div class="seccion-header" style="text-align: left;">
+        <h1>Catálogo de Productos</h1>
+        <p>Explora nuestros 50 artículos (10 por categoría) de tecnología clasificados en 5 categorías con precios en balboas / dólares.</p>
+    </div>
+
+    <!-- CONTENEDOR DE BUSCADOR -->
+    <div class="buscador-wrapper">
+        <div class="buscador">
+            <span class="lupa">🔍</span>
+            <input
+                type="text"
+                id="buscador"
+                placeholder="Buscar por nombre o categoría (ej. Laptop, iPhone, Audífonos, Gamer...)"
+                onkeyup="filtrarProductos()"
+            >
+            <button type="button" class="btn-limpiar" onclick="limpiarBuscador()" title="Limpiar búsqueda">✕</button>
+        </div>
+        <div class="contador-resultados" id="contadorResultados">
+            Mostrando 50 de 50 productos disponibles (10 por categoría)
+        </div>
+    </div>
+
+    <!-- FILTROS POR CATEGORÍA -->
+    <div class="filtros">
+        <button class="activo" onclick="filtrarCategoria('todos')">
+            🌐 Todos los productos (50)
+        </button>
+        <button onclick="filtrarCategoria('computadoras')">
+            💻 Computadoras (10)
+        </button>
+        <button onclick="filtrarCategoria('celulares')">
+            📱 Celulares (10)
+        </button>
+        <button onclick="filtrarCategoria('audio')">
+            🎧 Audio (10)
+        </button>
+        <button onclick="filtrarCategoria('accesorios')">
+            ⌨️ Accesorios (10)
+        </button>
+        <button onclick="filtrarCategoria('gaming')">
+            🎮 Gaming (10)
+        </button>
+    </div>
+
+    <!-- LISTA DE PRODUCTOS (GRID DE 15 ARTÍCULOS) -->
+    <div class="productos" id="listaProductos">
+
+        <!-- ================= CATEGORÍA: COMPUTADORAS ================= -->
+        <!-- 1 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="Laptop Lenovo IdeaPad 3">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto1.jpg" alt="Laptop Lenovo IdeaPad 3" onerror="this.src='imagenes/producto1.svg'">
+            </div>
+            <h3>Laptop Lenovo IdeaPad 3</h3>
+            <p>Portátil eficiente con procesador Ryzen 5 para estudio, programación y oficina.</p>
+            <div class="producto-precio-box">
+                <strong>$650.00 <span>B/. 650.00</span></strong>
+                <button onclick="agregarCarrito(1)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 2 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="Laptop HP 15 Core i5">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto2.jpg" alt="Laptop HP 15 Core i5" onerror="this.src='imagenes/producto2.svg'">
+            </div>
+            <h3>Laptop HP 15 Core i5</h3>
+            <p>Laptop moderna con procesador Intel Core i5 y pantalla 15.6 pulgadas Full HD para proyectos.</p>
+            <div class="producto-precio-box">
+                <strong>$720.00 <span>B/. 720.00</span></strong>
+                <button onclick="agregarCarrito(2)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 3 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="PC de Escritorio Dell OptiPlex">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto3.jpg" alt="PC de Escritorio Dell OptiPlex" onerror="this.src='imagenes/producto3.svg'">
+            </div>
+            <h3>PC de Escritorio Dell OptiPlex</h3>
+            <p>Computadora de escritorio completa y robusta para oficina, teletrabajo y hogar.</p>
+            <div class="producto-precio-box">
+                <strong>$580.00 <span>B/. 580.00</span></strong>
+                <button onclick="agregarCarrito(3)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 4 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="MacBook Air M2 13 pulgadas">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto4.jpg" alt="MacBook Air M2 13 pulgadas" onerror="this.src='imagenes/producto4.svg'">
+            </div>
+            <h3>MacBook Air M2 13 pulgadas</h3>
+            <p>Ultrabook ligera y potente con chip Apple M2, batería de 18 horas y pantalla Retina.</p>
+            <div class="producto-precio-box">
+                <strong>$1099.00 <span>B/. 1099.00</span></strong>
+                <button onclick="agregarCarrito(4)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 5 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="Laptop ASUS Vivobook 16">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto5.jpg" alt="Laptop ASUS Vivobook 16" onerror="this.src='imagenes/producto5.svg'">
+            </div>
+            <h3>Laptop ASUS Vivobook 16</h3>
+            <p>Pantalla expansiva de 16 pulgadas ideal para diseño gráfico, hojas de cálculo y multitarea.</p>
+            <div class="producto-precio-box">
+                <strong>$680.00 <span>B/. 680.00</span></strong>
+                <button onclick="agregarCarrito(5)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 6 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="Laptop Acer Aspire 5">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto6.jpg" alt="Laptop Acer Aspire 5" onerror="this.src='imagenes/producto6.svg'">
+            </div>
+            <h3>Laptop Acer Aspire 5</h3>
+            <p>Equipo accesible de alto rendimiento y durabilidad para tareas universitarias.</p>
+            <div class="producto-precio-box">
+                <strong>$520.00 <span>B/. 520.00</span></strong>
+                <button onclick="agregarCarrito(6)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 7 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="PC Gamer Master Desktop">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto7.jpg" alt="PC Gamer Master Desktop" onerror="this.src='imagenes/producto7.svg'">
+            </div>
+            <h3>PC Gamer Master Desktop</h3>
+            <p>Torre de escritorio con gráfica NVIDIA GeForce RTX, 32GB RAM y refrigeración líquida.</p>
+            <div class="producto-precio-box">
+                <strong>$1250.00 <span>B/. 1250.00</span></strong>
+                <button onclick="agregarCarrito(7)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 8 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="Laptop Lenovo ThinkPad E14">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto8.jpg" alt="Laptop Lenovo ThinkPad E14" onerror="this.src='imagenes/producto8.svg'">
+            </div>
+            <h3>Laptop Lenovo ThinkPad E14</h3>
+            <p>Portátil corporativa de gran resistencia con seguridad biométrica y teclado ergonómico.</p>
+            <div class="producto-precio-box">
+                <strong>$890.00 <span>B/. 890.00</span></strong>
+                <button onclick="agregarCarrito(8)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 9 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="All-in-One HP 24 pulgadas Touch">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto9.jpg" alt="All-in-One HP 24 pulgadas Touch" onerror="this.src='imagenes/producto9.svg'">
+            </div>
+            <h3>All-in-One HP 24 pulgadas Touch</h3>
+            <p>Computadora todo-en-uno elegante con pantalla táctil Full HD de 24 pulgadas y altavoces.</p>
+            <div class="producto-precio-box">
+                <strong>$780.00 <span>B/. 780.00</span></strong>
+                <button onclick="agregarCarrito(9)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 10 -->
+        <div class="producto" data-categoria="computadoras" data-nombre="Mini PC ASUS PN50">
+            <span class="tag-categoria">Computadoras</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto10.jpg" alt="Mini PC ASUS PN50" onerror="this.src='imagenes/producto10.svg'">
+            </div>
+            <h3>Mini PC ASUS PN50</h3>
+            <p>Computadora de factor ultra compacto y bajo consumo para optimizar tu espacio de trabajo.</p>
+            <div class="producto-precio-box">
+                <strong>$430.00 <span>B/. 430.00</span></strong>
+                <button onclick="agregarCarrito(10)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= CATEGORÍA: CELULARES ================= -->
+        <!-- 11 -->
+        <div class="producto" data-categoria="celulares" data-nombre="Samsung Galaxy A55 5G">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto11.jpg" alt="Samsung Galaxy A55 5G" onerror="this.src='imagenes/producto11.svg'">
+            </div>
+            <h3>Samsung Galaxy A55 5G</h3>
+            <p>Smartphone 5G con pantalla Super AMOLED de 120Hz y triple cámara de alta resolución.</p>
+            <div class="producto-precio-box">
+                <strong>$420.00 <span>B/. 420.00</span></strong>
+                <button onclick="agregarCarrito(11)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 12 -->
+        <div class="producto" data-categoria="celulares" data-nombre="iPhone 15 128GB">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto12.jpg" alt="iPhone 15 128GB" onerror="this.src='imagenes/producto12.svg'">
+            </div>
+            <h3>iPhone 15 128GB</h3>
+            <p>Smartphone Apple de alto rendimiento con Dynamic Island, chip A16 y cámara de 48MP.</p>
+            <div class="producto-precio-box">
+                <strong>$799.00 <span>B/. 799.00</span></strong>
+                <button onclick="agregarCarrito(12)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 13 -->
+        <div class="producto" data-categoria="celulares" data-nombre="Xiaomi Redmi Note 13 Pro">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto13.jpg" alt="Xiaomi Redmi Note 13 Pro" onerror="this.src='imagenes/producto13.svg'">
+            </div>
+            <h3>Xiaomi Redmi Note 13 Pro</h3>
+            <p>Smartphone con cámara de 200MP, carga turbo de 67W y batería de larga duración.</p>
+            <div class="producto-precio-box">
+                <strong>$280.00 <span>B/. 280.00</span></strong>
+                <button onclick="agregarCarrito(13)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 14 -->
+        <div class="producto" data-categoria="celulares" data-nombre="Motorola Edge 40 Neo">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto14.jpg" alt="Motorola Edge 40 Neo" onerror="this.src='imagenes/producto14.svg'">
+            </div>
+            <h3>Motorola Edge 40 Neo</h3>
+            <p>Diseño ultradelgado con certificación contra agua IP68 y pantalla curva pOLED 144Hz.</p>
+            <div class="producto-precio-box">
+                <strong>$340.00 <span>B/. 340.00</span></strong>
+                <button onclick="agregarCarrito(14)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 15 -->
+        <div class="producto" data-categoria="celulares" data-nombre="Samsung Galaxy S24 Ultra">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto15.jpg" alt="Samsung Galaxy S24 Ultra" onerror="this.src='imagenes/producto15.svg'">
+            </div>
+            <h3>Samsung Galaxy S24 Ultra</h3>
+            <p>El flagship definitivo con titanio, zoom óptico 100x y lápiz óptico S-Pen integrado.</p>
+            <div class="producto-precio-box">
+                <strong>$1199.00 <span>B/. 1199.00</span></strong>
+                <button onclick="agregarCarrito(15)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 16 -->
+        <div class="producto" data-categoria="celulares" data-nombre="Google Pixel 8 Pro">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto16.jpg" alt="Google Pixel 8 Pro" onerror="this.src='imagenes/producto16.svg'">
+            </div>
+            <h3>Google Pixel 8 Pro</h3>
+            <p>Fotografía computacional de nivel profesional y las funciones más avanzadas de Android.</p>
+            <div class="producto-precio-box">
+                <strong>$850.00 <span>B/. 850.00</span></strong>
+                <button onclick="agregarCarrito(16)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 17 -->
+        <div class="producto" data-categoria="celulares" data-nombre="Honor Magic 6 Lite">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto17.jpg" alt="Honor Magic 6 Lite" onerror="this.src='imagenes/producto17.svg'">
+            </div>
+            <h3>Honor Magic 6 Lite</h3>
+            <p>Pantalla con resistencia anticaídas 360°, batería masiva de 5800mAh y diseño prémium.</p>
+            <div class="producto-precio-box">
+                <strong>$290.00 <span>B/. 290.00</span></strong>
+                <button onclick="agregarCarrito(17)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 18 -->
+        <div class="producto" data-categoria="celulares" data-nombre="POCO X6 Pro 5G">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto18.jpg" alt="POCO X6 Pro 5G" onerror="this.src='imagenes/producto18.svg'">
+            </div>
+            <h3>POCO X6 Pro 5G</h3>
+            <p>Potencia gamer sobresaliente con procesador Dimensity 8300-Ultra y pantalla Flow AMOLED.</p>
+            <div class="producto-precio-box">
+                <strong>$360.00 <span>B/. 360.00</span></strong>
+                <button onclick="agregarCarrito(18)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 19 -->
+        <div class="producto" data-categoria="celulares" data-nombre="iPhone 13 128GB">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto19.jpg" alt="iPhone 13 128GB" onerror="this.src='imagenes/producto19.svg'">
+            </div>
+            <h3>iPhone 13 128GB</h3>
+            <p>Excelente equilibrio entre costo y rendimiento, modo cine en 4K y chip A15 Bionic.</p>
+            <div class="producto-precio-box">
+                <strong>$580.00 <span>B/. 580.00</span></strong>
+                <button onclick="agregarCarrito(19)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 20 -->
+        <div class="producto" data-categoria="celulares" data-nombre="OnePlus Nord CE 3 Lite">
+            <span class="tag-categoria">Celulares</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto20.jpg" alt="OnePlus Nord CE 3 Lite" onerror="this.src='imagenes/producto20.svg'">
+            </div>
+            <h3>OnePlus Nord CE 3 Lite</h3>
+            <p>Cámara principal de 108MP, altavoces estéreo potentes y pantalla brillante a 120Hz.</p>
+            <div class="producto-precio-box">
+                <strong>$230.00 <span>B/. 230.00</span></strong>
+                <button onclick="agregarCarrito(20)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= CATEGORÍA: AUDIO ================= -->
+        <!-- 21 -->
+        <div class="producto" data-categoria="audio" data-nombre="Audífonos Sony WH-CH520">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto21.jpg" alt="Audífonos Sony WH-CH520" onerror="this.src='imagenes/producto21.svg'">
+            </div>
+            <h3>Audífonos Sony WH-CH520</h3>
+            <p>Audífonos inalámbricos con hasta 50 horas de reproducción y conexión multipunto.</p>
+            <div class="producto-precio-box">
+                <strong>$45.00 <span>B/. 45.00</span></strong>
+                <button onclick="agregarCarrito(21)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 22 -->
+        <div class="producto" data-categoria="audio" data-nombre="Parlante JBL Flip 6">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto22.jpg" alt="Parlante JBL Flip 6" onerror="this.src='imagenes/producto22.svg'">
+            </div>
+            <h3>Parlante JBL Flip 6</h3>
+            <p>Sonido potente portátil a 2 vías, radiadores pasivos de bajos y protección IP67.</p>
+            <div class="producto-precio-box">
+                <strong>$95.00 <span>B/. 95.00</span></strong>
+                <button onclick="agregarCarrito(22)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 23 -->
+        <div class="producto" data-categoria="audio" data-nombre="Micrófono USB HyperX QuadCast">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto23.jpg" alt="Micrófono USB HyperX QuadCast" onerror="this.src='imagenes/producto23.svg'">
+            </div>
+            <h3>Micrófono USB HyperX QuadCast</h3>
+            <p>Micrófono condensador con montura antivibración, filtro antipop y sensor táctil.</p>
+            <div class="producto-precio-box">
+                <strong>$110.00 <span>B/. 110.00</span></strong>
+                <button onclick="agregarCarrito(23)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 24 -->
+        <div class="producto" data-categoria="audio" data-nombre="AirPods 3ra Generación">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto24.jpg" alt="AirPods 3ra Generación" onerror="this.src='imagenes/producto24.svg'">
+            </div>
+            <h3>AirPods 3ra Generación</h3>
+            <p>Audio espacial personalizado con seguimiento dinámico de la cabeza y estuche MagSafe.</p>
+            <div class="producto-precio-box">
+                <strong>$169.00 <span>B/. 169.00</span></strong>
+                <button onclick="agregarCarrito(24)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 25 -->
+        <div class="producto" data-categoria="audio" data-nombre="Audífonos Sony WH-1000XM5">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto25.jpg" alt="Audífonos Sony WH-1000XM5" onerror="this.src='imagenes/producto25.svg'">
+            </div>
+            <h3>Audífonos Sony WH-1000XM5</h3>
+            <p>Cancelación de ruido líder en la industria con audio Hi-Res y llamadas ultra nítidas.</p>
+            <div class="producto-precio-box">
+                <strong>$320.00 <span>B/. 320.00</span></strong>
+                <button onclick="agregarCarrito(25)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 26 -->
+        <div class="producto" data-categoria="audio" data-nombre="Parlante Amazon Echo Dot 5">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto26.jpg" alt="Parlante Amazon Echo Dot 5" onerror="this.src='imagenes/producto26.svg'">
+            </div>
+            <h3>Parlante Amazon Echo Dot 5</h3>
+            <p>Parlante inteligente con control por voz de Alexa, sonido mejorado y detección de movimiento.</p>
+            <div class="producto-precio-box">
+                <strong>$50.00 <span>B/. 50.00</span></strong>
+                <button onclick="agregarCarrito(26)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 27 -->
+        <div class="producto" data-categoria="audio" data-nombre="Barra de Sonido Samsung TV">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto27.jpg" alt="Barra de Sonido Samsung TV" onerror="this.src='imagenes/producto27.svg'">
+            </div>
+            <h3>Barra de Sonido Samsung TV</h3>
+            <p>Sistema de audio envolvente 2.1 canales con subwoofer inalámbrico y modo juego.</p>
+            <div class="producto-precio-box">
+                <strong>$135.00 <span>B/. 135.00</span></strong>
+                <button onclick="agregarCarrito(27)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 28 -->
+        <div class="producto" data-categoria="audio" data-nombre="Audífonos Deportivos JBL Tune Flex">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto28.jpg" alt="Audífonos Deportivos JBL Tune Flex" onerror="this.src='imagenes/producto28.svg'">
+            </div>
+            <h3>Audífonos Deportivos JBL Tune Flex</h3>
+            <p>Auriculares True Wireless ergonómicos resistentes al sudor con sonido Pure Bass.</p>
+            <div class="producto-precio-box">
+                <strong>$60.00 <span>B/. 60.00</span></strong>
+                <button onclick="agregarCarrito(28)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 29 -->
+        <div class="producto" data-categoria="audio" data-nombre="Micrófono Condensador Blue Yeti">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto29.jpg" alt="Micrófono Condensador Blue Yeti" onerror="this.src='imagenes/producto29.svg'">
+            </div>
+            <h3>Micrófono Condensador Blue Yeti</h3>
+            <p>El estándar de oro para creadores de contenido, 4 patrones de captación y conexión USB.</p>
+            <div class="producto-precio-box">
+                <strong>$125.00 <span>B/. 125.00</span></strong>
+                <button onclick="agregarCarrito(29)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 30 -->
+        <div class="producto" data-categoria="audio" data-nombre="Parlante Anker Soundcore 2">
+            <span class="tag-categoria">Audio</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto30.jpg" alt="Parlante Anker Soundcore 2" onerror="this.src='imagenes/producto30.svg'">
+            </div>
+            <h3>Parlante Anker Soundcore 2</h3>
+            <p>Parlante Bluetooth resistente al agua con tecnología BassUp y 24 horas de batería.</p>
+            <div class="producto-precio-box">
+                <strong>$40.00 <span>B/. 40.00</span></strong>
+                <button onclick="agregarCarrito(30)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= CATEGORÍA: ACCESORIOS ================= -->
+        <!-- 31 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Teclado Mecánico Redragon Kumara">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto31.jpg" alt="Teclado Mecánico Redragon Kumara" onerror="this.src='imagenes/producto31.svg'">
+            </div>
+            <h3>Teclado Mecánico Redragon Kumara</h3>
+            <p>Teclado mecánico compacto TKL con switches Outemu Blue táctiles y retroiluminación.</p>
+            <div class="producto-precio-box">
+                <strong>$55.00 <span>B/. 55.00</span></strong>
+                <button onclick="agregarCarrito(31)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 32 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Mouse Inalámbrico Logitech M170">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto32.jpg" alt="Mouse Inalámbrico Logitech M170" onerror="this.src='imagenes/producto32.svg'">
+            </div>
+            <h3>Mouse Inalámbrico Logitech M170</h3>
+            <p>Mouse inalámbrico confiable y compacto con alcance de 10 metros y batería de 1 año.</p>
+            <div class="producto-precio-box">
+                <strong>$15.00 <span>B/. 15.00</span></strong>
+                <button onclick="agregarCarrito(32)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 33 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Memoria USB Kingston 128GB 3.2">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto33.jpg" alt="Memoria USB Kingston 128GB 3.2" onerror="this.src='imagenes/producto33.svg'">
+            </div>
+            <h3>Memoria USB Kingston 128GB 3.2</h3>
+            <p>Memoria USB 3.2 Gen 1 con carcasa metálica ultrarresistente y alta velocidad de lectura.</p>
+            <div class="producto-precio-box">
+                <strong>$20.00 <span>B/. 20.00</span></strong>
+                <button onclick="agregarCarrito(33)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 34 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Disco Sólido Externo SSD 1TB">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto34.jpg" alt="Disco Sólido Externo SSD 1TB" onerror="this.src='imagenes/producto34.svg'">
+            </div>
+            <h3>Disco Sólido Externo SSD 1TB</h3>
+            <p>Unidad SSD externa portátil de 1050 MB/s resistente a golpes para copias de seguridad.</p>
+            <div class="producto-precio-box">
+                <strong>$90.00 <span>B/. 90.00</span></strong>
+                <button onclick="agregarCarrito(34)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 35 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Hub Adaptador USB-C 7 en 1">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto35.jpg" alt="Hub Adaptador USB-C 7 en 1" onerror="this.src='imagenes/producto35.svg'">
+            </div>
+            <h3>Hub Adaptador USB-C 7 en 1</h3>
+            <p>Adaptador multipuerto con salida HDMI 4K, 3 puertos USB 3.0, lector SD y carga Power Delivery.</p>
+            <div class="producto-precio-box">
+                <strong>$35.00 <span>B/. 35.00</span></strong>
+                <button onclick="agregarCarrito(35)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 36 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Webcam Logitech C920 HD Pro">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto36.jpg" alt="Webcam Logitech C920 HD Pro" onerror="this.src='imagenes/producto36.svg'">
+            </div>
+            <h3>Webcam Logitech C920 HD Pro</h3>
+            <p>Cámara web Full HD 1080p con micrófonos estéreo duales y corrección automática de luz.</p>
+            <div class="producto-precio-box">
+                <strong>$75.00 <span>B/. 75.00</span></strong>
+                <button onclick="agregarCarrito(36)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 37 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Soporte Ergonómico para Laptop">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto37.jpg" alt="Soporte Ergonómico para Laptop" onerror="this.src='imagenes/producto37.svg'">
+            </div>
+            <h3>Soporte Ergonómico para Laptop</h3>
+            <p>Base de aluminio plegable con 6 niveles de altura para mejorar la postura y ventilación.</p>
+            <div class="producto-precio-box">
+                <strong>$25.00 <span>B/. 25.00</span></strong>
+                <button onclick="agregarCarrito(37)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 38 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Cargador Rápido GaN 65W">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto38.jpg" alt="Cargador Rápido GaN 65W" onerror="this.src='imagenes/producto38.svg'">
+            </div>
+            <h3>Cargador Rápido GaN 65W</h3>
+            <p>Cargador inteligente con tecnología nitruro de galio para cargar laptop y celular a la vez.</p>
+            <div class="producto-precio-box">
+                <strong>$40.00 <span>B/. 40.00</span></strong>
+                <button onclick="agregarCarrito(38)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 39 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Teclado Inalámbrico Logitech K380">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto39.jpg" alt="Teclado Inalámbrico Logitech K380" onerror="this.src='imagenes/producto39.svg'">
+            </div>
+            <h3>Teclado Inalámbrico Logitech K380</h3>
+            <p>Teclado Bluetooth multidispositivo ultra delgado compatible con Windows, Mac, iOS y Android.</p>
+            <div class="producto-precio-box">
+                <strong>$45.00 <span>B/. 45.00</span></strong>
+                <button onclick="agregarCarrito(39)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 40 -->
+        <div class="producto" data-categoria="accesorios" data-nombre="Mouse Pad Ergonómico XXL">
+            <span class="tag-categoria">Accesorios</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto40.jpg" alt="Mouse Pad Ergonómico XXL" onerror="this.src='imagenes/producto40.svg'">
+            </div>
+            <h3>Mouse Pad Ergonómico XXL</h3>
+            <p>Tapete de escritorio de 90x40 cm con base antideslizante de goma y bordes con costura.</p>
+            <div class="producto-precio-box">
+                <strong>$18.00 <span>B/. 18.00</span></strong>
+                <button onclick="agregarCarrito(40)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= CATEGORÍA: GAMING ================= -->
+        <!-- 41 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Control Xbox Wireless Controller">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto41.jpg" alt="Control Xbox Wireless Controller" onerror="this.src='imagenes/producto41.svg'">
+            </div>
+            <h3>Control Xbox Wireless Controller</h3>
+            <p>Mando ergonómico oficial inalámbrico con gatillos texturizados y compatibilidad universal.</p>
+            <div class="producto-precio-box">
+                <strong>$65.00 <span>B/. 65.00</span></strong>
+                <button onclick="agregarCarrito(41)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 42 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Mouse Gamer Logitech G502 HERO">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto42.jpg" alt="Mouse Gamer Logitech G502 HERO" onerror="this.src='imagenes/producto42.svg'">
+            </div>
+            <h3>Mouse Gamer Logitech G502 HERO</h3>
+            <p>Sensor óptico de 25,600 DPI, 11 botones programables y sistema de pesas ajustables.</p>
+            <div class="producto-precio-box">
+                <strong>$50.00 <span>B/. 50.00</span></strong>
+                <button onclick="agregarCarrito(42)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 43 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Audífonos Gamer Razer BlackShark V2">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto43.jpg" alt="Audífonos Gamer Razer BlackShark V2" onerror="this.src='imagenes/producto43.svg'">
+            </div>
+            <h3>Audífonos Gamer Razer BlackShark V2</h3>
+            <p>Sonido espacial THX, diafragmas TriForce de 50mm y micrófono cardioide HyperClear.</p>
+            <div class="producto-precio-box">
+                <strong>$85.00 <span>B/. 85.00</span></strong>
+                <button onclick="agregarCarrito(43)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 44 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Teclado Gamer Corsair K55 RGB">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto44.jpg" alt="Teclado Gamer Corsair K55 RGB" onerror="this.src='imagenes/producto44.svg'">
+            </div>
+            <h3>Teclado Gamer Corsair K55 RGB</h3>
+            <p>Retroiluminación RGB dinámica de 3 zonas, 6 teclas macro dedicadas y reposamuñecas.</p>
+            <div class="producto-precio-box">
+                <strong>$60.00 <span>B/. 60.00</span></strong>
+                <button onclick="agregarCarrito(44)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 45 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Control DualSense PS5 Inalámbrico">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto45.jpg" alt="Control DualSense PS5 Inalámbrico" onerror="this.src='imagenes/producto45.svg'">
+            </div>
+            <h3>Control DualSense PS5 Inalámbrico</h3>
+            <p>Gatillos adaptativos con resistencia dinámica y retroalimentación háptica inmersiva.</p>
+            <div class="producto-precio-box">
+                <strong>$70.00 <span>B/. 70.00</span></strong>
+                <button onclick="agregarCarrito(45)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 46 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Silla Gamer Ergonómica Cougar">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto46.jpg" alt="Silla Gamer Ergonómica Cougar" onerror="this.src='imagenes/producto46.svg'">
+            </div>
+            <h3>Silla Gamer Ergonómica Cougar</h3>
+            <p>Estructura de acero reforzado, respaldo reclinable 180° y cojines lumbar/cervical.</p>
+            <div class="producto-precio-box">
+                <strong>$185.00 <span>B/. 185.00</span></strong>
+                <button onclick="agregarCarrito(46)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 47 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Volante y Pedales Logitech G29">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto47.jpg" alt="Volante y Pedales Logitech G29" onerror="this.src='imagenes/producto47.svg'">
+            </div>
+            <h3>Volante y Pedales Logitech G29</h3>
+            <p>Simulador de carreras con Force Feedback de 2 motores, levas de acero y pedales sensibles.</p>
+            <div class="producto-precio-box">
+                <strong>$260.00 <span>B/. 260.00</span></strong>
+                <button onclick="agregarCarrito(47)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 48 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Micrófono Gamer Razer Seiren Mini">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto48.jpg" alt="Micrófono Gamer Razer Seiren Mini" onerror="this.src='imagenes/producto48.svg'">
+            </div>
+            <h3>Micrófono Gamer Razer Seiren Mini</h3>
+            <p>Micrófono condensador ultracompacto para streaming con patrón de captación supercardioide.</p>
+            <div class="producto-precio-box">
+                <strong>$48.00 <span>B/. 48.00</span></strong>
+                <button onclick="agregarCarrito(48)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 49 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Mouse Gamer Redragon Cobra M711">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto49.jpg" alt="Mouse Gamer Redragon Cobra M711" onerror="this.src='imagenes/producto49.svg'">
+            </div>
+            <h3>Mouse Gamer Redragon Cobra M711</h3>
+            <p>Sensor óptico de 10,000 DPI, iluminación RGB Chroma configurable y switches mecánicos.</p>
+            <div class="producto-precio-box">
+                <strong>$28.00 <span>B/. 28.00</span></strong>
+                <button onclick="agregarCarrito(49)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        <!-- 50 -->
+        <div class="producto" data-categoria="gaming" data-nombre="Audífonos Gamer HyperX Cloud II">
+            <span class="tag-categoria">Gaming</span>
+            <div class="imagen-producto">
+                <img src="imagenes/producto50.jpg" alt="Audífonos Gamer HyperX Cloud II" onerror="this.src='imagenes/producto50.svg'">
+            </div>
+            <h3>Audífonos Gamer HyperX Cloud II</h3>
+            <p>Sonido envolvente 7.1 con caja de control de audio USB, diadema de aluminio y espumas cómodas.</p>
+            <div class="producto-precio-box">
+                <strong>$89.00 <span>B/. 89.00</span></strong>
+                <button onclick="agregarCarrito(50)">
+                    🛒 Agregar al carrito
+                </button>
+            </div>
+        </div>
+        </div>
+</main>
+
+<!-- PIE DE PÁGINA INSTITUCIONAL -->
+<footer>
+    <div class="footer-contenedor">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Cybertech</h3>
+                <p>Tienda virtual especializada en soluciones informáticas, cómputo, telefonía móvil y accesorios gamer en Panamá.</p>
+                <div class="footer-metodos-pago">
+                    <span class="pago-pill">Yappy</span>
+                    <span class="pago-pill">Visa</span>
+                    <span class="pago-pill">Mastercard</span>
+                    <span class="pago-pill">Banco General</span>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="productos.html?cat=computadoras">Computadoras</a></li>
+                    <li><a href="productos.html?cat=celulares">Celulares</a></li>
+                    <li><a href="productos.html?cat=audio">Audio</a></li>
+                    <li><a href="productos.html?cat=accesorios">Accesorios</a></li>
+                    <li><a href="productos.html?cat=gaming">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Catálogo Completo</a></li>
+                    <li><a href="carrito.html">Mi Carrito de Compras</a></li>
+                    <li><a href="contacto.html">Formulario y Checkout</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Proyecto Académico</h3>
+                <div class="badge-estudiante">
+                    <p><strong>Estudiante:</strong> Roberto Vasquez</p>
+                    <p><strong>Universidad:</strong> Universidad de Panamá</p>
+                    <p><strong>Facultad:</strong> Facultad de Informática</p>
+                    <p><strong>Curso:</strong> Programación para Web</p>
+                    <p><strong>Docente:</strong> Magíster Alma V. Bosquez</p>
+                    <p><strong>Período:</strong> Semestral II Semestre 2026</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-creditos">
+            <p>&copy; 2026 <strong>Cybertech</strong> | Desarrollado por <strong>Roberto Vasquez</strong> - <strong>Universidad de Panamá</strong>. Proyecto Académico de Programación Web.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/funciones.js"></script>
+</body>
+</html>
