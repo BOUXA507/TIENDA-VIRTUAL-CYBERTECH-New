@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo y tarjeta -->
+  <rect width="400" height="320" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Acentos visuales -->
+  <circle cx="350" cy="50" r="80" fill="#38bdf8" opacity="0.08"/>
+  <circle cx="50" cy="280" r="60" fill="#2563eb" opacity="0.06"/>
+  
+  <!-- Etiqueta de Categoría -->
+  <rect x="20" y="20" width="125" height="26" rx="13" fill="#0284c7" opacity="0.15"/>
+  <text x="82" y="37" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#0284c7" text-anchor="middle" letter-spacing="1">COMPUTADORAS</text>
+  
+  <!-- Ilustración del producto -->
+  
+        <g transform="translate(50, 45)">
+          <ellipse cx="150" cy="225" rx="140" ry="15" fill="#cbd5e1" opacity="0.7"/>
+          <rect x="35" y="20" width="230" height="145" rx="8" fill="#94a3b8" stroke="#64748b" stroke-width="3"/>
+          <rect x="42" y="27" width="216" height="131" rx="4" fill="#0f172a"/>
+          <rect x="45" y="30" width="210" height="125" rx="2" fill="#0284c7"/>
+          <circle cx="150" cy="92" r="22" fill="#ffffff" opacity="0.2"/>
+          <text x="150" y="99" font-size="20" fill="#ffffff" font-style="italic" font-weight="900" text-anchor="middle">hp</text>
+          <circle cx="150" cy="23" r="2" fill="#38bdf8"/>
+          <polygon points="12,172 288,172 268,220 32,220" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+          <polygon points="40,176 260,176 248,203 52,203" fill="#475569"/>
+          <rect x="125" y="206" width="50" height="10" rx="2" fill="#cbd5e1"/>
+        </g>
+        
+</svg>

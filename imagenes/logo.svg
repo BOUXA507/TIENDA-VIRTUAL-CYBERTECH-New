@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 92" width="480" height="92">
+  <defs>
+    <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="50%" stop-color="#3a7bd5"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Isotipo: Hexágono tecnológico -->
+  <g transform="translate(6, 6)" filter="url(#subtleShadow)">
+    <polygon points="40,3 76,23 76,61 40,81 4,61 4,23" 
+             fill="#0f172a" stroke="url(#cyberGrad)" stroke-width="3.5" stroke-linejoin="round"/>
+    
+    <path d="M 58,26 L 32,26 A 16,16 0 0,0 16,42 A 16,16 0 0,0 32,58 L 58,58" 
+          fill="none" stroke="url(#cyberGrad)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <circle cx="40" cy="42" r="4.5" fill="#38bdf8"/>
+    <circle cx="58" cy="26" r="3.5" fill="#00d2ff"/>
+    <circle cx="58" cy="58" r="3.5" fill="#00d2ff"/>
+  </g>
+
+  <!-- Logotipo tipográfico: CYBERTECH TECNOLOGÍA & INNOVACIÓN -->
+  <g transform="translate(98, 16)">
+    <text x="0" y="34" font-family="'Segoe UI', 'Montserrat', -apple-system, Roboto, sans-serif" 
+          font-weight="900" font-size="38" letter-spacing="1.5" fill="#0f172a">
+      CYBER<tspan fill="url(#glowGrad)">TECH</tspan>
+    </text>
+    <text x="2" y="58" font-family="'Segoe UI', Roboto, sans-serif" 
+          font-weight="700" font-size="13.5" letter-spacing="3.2" fill="#0284c7">
+      TECNOLOGÍA &amp; INNOVACIÓN
+    </text>
+  </g>
+</svg>

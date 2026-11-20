@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo y tarjeta -->
+  <rect width="400" height="320" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Acentos visuales -->
+  <circle cx="350" cy="50" r="80" fill="#38bdf8" opacity="0.08"/>
+  <circle cx="50" cy="280" r="60" fill="#2563eb" opacity="0.06"/>
+  
+  <!-- Etiqueta de Categoría -->
+  <rect x="20" y="20" width="125" height="26" rx="13" fill="#10b981" opacity="0.15"/>
+  <text x="82" y="37" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#10b981" text-anchor="middle" letter-spacing="1">ACCESORIOS</text>
+  
+  <!-- Ilustración del producto -->
+  
+        <g transform="translate(40, 60)">
+          <ellipse cx="160" cy="195" rx="150" ry="18" fill="#cbd5e1" opacity="0.7"/>
+          <polygon points="10,60 310,60 290,180 30,180" fill="#0f172a" stroke="#334155" stroke-width="3"/>
+          <polygon points="20,175 300,175 285,183 35,183" fill="#06b6d4" opacity="0.8"/>
+          <rect x="35" y="72" width="250" height="15" rx="3" fill="#1e293b" stroke="#ec4899" stroke-width="1.5"/>
+          <rect x="37" y="93" width="246" height="15" rx="3" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+          <rect x="39" y="114" width="242" height="15" rx="3" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+          <rect x="41" y="135" width="238" height="15" rx="3" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+          <rect x="100" y="156" width="120" height="16" rx="3" fill="#334155" stroke="#38bdf8" stroke-width="2"/>
+        </g>
+        
+</svg>

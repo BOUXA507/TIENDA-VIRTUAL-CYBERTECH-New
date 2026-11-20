@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo y tarjeta -->
+  <rect width="400" height="320" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Acentos visuales -->
+  <circle cx="350" cy="50" r="80" fill="#38bdf8" opacity="0.08"/>
+  <circle cx="50" cy="280" r="60" fill="#2563eb" opacity="0.06"/>
+  
+  <!-- Etiqueta de Categoría -->
+  <rect x="20" y="20" width="125" height="26" rx="13" fill="#ef4444" opacity="0.15"/>
+  <text x="82" y="37" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#ef4444" text-anchor="middle" letter-spacing="1">GAMING</text>
+  
+  <!-- Ilustración del producto -->
+  
+        <g transform="translate(80, 30)">
+          <ellipse cx="120" cy="245" rx="95" ry="15" fill="#cbd5e1" opacity="0.7"/>
+          <path d="M40,145 A85,85 0 0,1 200,145" fill="none" stroke="#334155" stroke-width="6"/>
+          <path d="M45,152 A80,80 0 0,1 195,152" fill="none" stroke="#0f172a" stroke-width="14"/>
+          <path d="M50,152 A75,75 0 0,1 190,152" fill="none" stroke="#ef4444" stroke-width="3"/>
+          <rect x="16" y="125" width="44" height="75" rx="20" fill="#0f172a" stroke="#ef4444" stroke-width="3.5"/>
+          <circle cx="38" cy="162" r="14" fill="none" stroke="#06b6d4" stroke-width="3"/>
+          <rect x="180" y="125" width="44" height="75" rx="20" fill="#0f172a" stroke="#ef4444" stroke-width="3.5"/>
+          <circle cx="202" cy="162" r="14" fill="none" stroke="#06b6d4" stroke-width="3"/>
+          <path d="M35,185 Q40,230 95,230" fill="none" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+          <rect x="93" y="223" width="18" height="14" rx="4" fill="#ef4444"/>
+          <circle cx="107" cy="230" r="2" fill="#ffffff"/>
+        </g>
+        
+</svg>
